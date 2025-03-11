@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ChatappHome, ChatContainer, WhatsappHome } from "../components/Chat";
+import { ChatappHome, ChatContainer } from "../components/Chat";
 import { Sidebar } from "../components/sidebar";
 import SocketContext from "../context/SocketContext";
 import {
