@@ -7,7 +7,7 @@ import ChatHeader from "./header/ChatHeader";
 import ChatMessages from "./messages/ChatMessages";
 import FilesPreview from "./preview/files/FilesPreview";
 
-export default function ChatContainer({ onlineUsers, typing }) {
+export default function ChatContainer({ onlineUsers, typing, callUser }) {
   const dispatch = useDispatch();
   const { activeConversation, files } = useSelector((state) => state.chat);
   const { user } = useSelector((state) => state.user);
@@ -27,11 +27,12 @@ export default function ChatContainer({ onlineUsers, typing }) {
       <div>
         {/*Chat header*/}
         <ChatHeader
-          online={checkOnlineStatus(
-            onlineUsers,
-            user,
-            activeConversation.users
-          )}
+          online={
+            activeConversation.isGroup
+              ? false
+              : checkOnlineStatus(onlineUsers, user, activeConversation.users)
+          }
+          callUser={callUser}
         />
         {files.length > 0 ? (
           <FilesPreview />

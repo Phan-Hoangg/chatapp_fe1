@@ -14,9 +14,8 @@ export default function ChatappHome() {
             Chatapp Web
           </h1>
           <p className="text-sm dark:text-dark_text_3">
-            Send and receive messages without keeping your phone online.
+            Gửi và nhận tin nhắn mà không cần phải giữ điện thoại trực tuyến.
             <br />
-            Use Whatsapp on up to 4 linked devices and 1 phone at the same time.
           </p>
         </div>
       </div>
