@@ -179,8 +179,10 @@ function Home({ socket }) {
 
   // ----------------- Kích hoạt media -----------------
   const enableMedia = () => {
-    myVideo.current.srcObject = stream; // Gán stream cho video của mình
-    setShow(true); // Hiển thị giao diện cuộc gọi
+    if (myVideo.current && stream) {
+      myVideo.current.srcObject = stream;
+    }
+    setShow(true);
   };
 
   // ----------------- Lấy danh sách cuộc hội thoại -----------------
